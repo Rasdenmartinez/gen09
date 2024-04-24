@@ -19,21 +19,22 @@ public class DepartamentoController {
         return departamentoService.readAll();
     }
 
-    @GetMapping("departamento/{id}")
+    @GetMapping("/departamento/{id}")
     public Optional<Departamento> obtenerDepa (@PathVariable Long id){
         return departamentoService.readById(id);
     }
-    @PostMapping("departamento")
+
+    @PostMapping("/departamento")
     public Departamento crear(@RequestBody Departamento departamento){
         return departamentoService.create(departamento);
     }
 
-    @PutMapping("departamento")
+    @PutMapping("/departamento")
     public Departamento actualizar(@RequestBody Departamento departamento){
         return departamentoService.update(departamento);
     }
 
-    @DeleteMapping("departamento/{id}")
+    @DeleteMapping("/departamento/{id}")
     public void borrar(@PathVariable Long id){
         departamentoService.delete(id);
     }
